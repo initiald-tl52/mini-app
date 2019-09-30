@@ -11,8 +11,8 @@
 ## blogsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|String|ull: false|
-|sentence|text|ull: false|
+|title|string|null: false|
+|sentence|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
