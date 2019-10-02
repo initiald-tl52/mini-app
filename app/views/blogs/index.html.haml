@@ -3,11 +3,11 @@
     %a.brand-logo(href="#")Blog
     %ul#nav-mobile.right.hide-on-med-and-down
       %li
-        %a(href="#")SignIn
+        = link_to 'SignIn', user_session_path , method: :post
       %li
-        %a(href="#")SignOut
+        = link_to 'SignOut', destroy_user_session_path , method: :delete
       %li
-        %a(href="#")New
+        = link_to 'New', new_user_session_path
   .container
     .row
       .col.s12.m6
