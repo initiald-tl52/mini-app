@@ -65,3 +65,10 @@ gem 'compass-rails', '3.1.0'
 gem 'sprockets', '3.7.2'
 
 gem 'devise'
+
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons' 
+
+
+gem 'erb2haml'
+gem 'haml-rails'
