@@ -17,3 +17,4 @@
             -if user_signed_in? && blog.user_id == current_user.id
               = link_to 'EDIT', edit_user_blog_path(blog.user,blog)
       -# = render "blogs/sentencecards"
+        -# = render 'container', { blogs: @blogs }

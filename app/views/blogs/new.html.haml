@@ -2,9 +2,11 @@
   .row
     .col.s12.m6.offset-m3
       .card.blue-grey.darken-1
-        = form_for @blog, url: '/users/'+current_user.id.to_s+'/blogs' do |f|
+        = form_for [current_user,@blog] do |f|
           .card-content
             .input-field
-              = f. text_area :sentence ,class:'materialize-textarea'
+              = f.text_field :title ,class:'materialize-textarea'
+            .input-field
+              = f.text_area :sentence ,class:'materialize-textarea'
           .card-action
             = f.submit "Send"

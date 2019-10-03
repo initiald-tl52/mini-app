@@ -3,9 +3,9 @@
     .col.s12.m6.offset-m3
       .card.blue-grey.darken-1
         = form_for [current_user,@blog],method: :patch do |f|
-          .card-content.white-text
-            %span.card-title
-              = @blog.title
+          .card-content
+            .input-field
+              = f.text_field :title ,class:'materialize-textarea'
             .input-field
               = f.text_area :sentence ,class:'materialize-textarea'
           .card-action
