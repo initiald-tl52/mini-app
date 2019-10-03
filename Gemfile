@@ -72,3 +72,11 @@ gem 'material_icons'
 
 gem 'erb2haml'
 gem 'haml-rails'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end
+
+gem "jquery-rails"

@@ -1,11 +1,16 @@
 class BlogsController < ApplicationController
 
   def index
-    @blogs = Blog.new
+    
   end
 
   def create
-    
+    Blog.create(sentence: blog_params[:sentence], title: blog_params[:title], user_id: current_user.id)
+    redirect_to action: :index
+  end
+
+  def new
+    @blogs = Blog.new
   end
 
   def edit
@@ -20,6 +25,6 @@ class BlogsController < ApplicationController
   end
   private
   def blog_params
-    params.permit(:sentence)
+    params.require(:blog).permit(:sentence, :title)
   end
 end
