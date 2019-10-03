@@ -14,19 +14,23 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = Blog.find(blog_params[:id])
+    @blog = Blog.find(params[:id])
   end
 
   def destroy
-    
+    blog = Blog.find(params[:id])
+    blog.destroy if blog.user_id == current_user.id
+    redirect_to action: :index
   end
 
   def update
-
+    blog = Blog.find(params[:id])
+    blog.update(blog_params) if blog.user_id == current_user.id
+    redirect_to action: :index
   end
 
   private
   def blog_params
-    params.permit(:sentence,:title,:id)
+    params.require(:blog).permit(:id,:title,:sentence)
   end
 end

@@ -5,6 +5,8 @@
         - @blogs.each do |blog|
           .card-content.white-text
             %span.card-title
+              = blog.title
+            %p
               = blog.sentence
             .user-name-div
               %span
@@ -12,6 +14,6 @@
                 = blog.user.name
             %p
           .card-action
-            -if blog.user_id == current_user.id
+            -if user_signed_in? && blog.user_id == current_user.id
               = link_to 'EDIT', edit_user_blog_path(blog.user,blog)
       -# = render "blogs/sentencecards"
