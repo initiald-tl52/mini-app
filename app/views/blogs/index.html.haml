@@ -1,22 +1,9 @@
 %nav
-  .nav-wrapper
-    %a.brand-logo(href="#")Blog
-    %ul#nav-mobile.right.hide-on-med-and-down
-      %li
-        = link_to 'SignIn', user_session_path , method: :post
-      %li
-        = link_to 'SignOut', destroy_user_session_path , method: :delete
-      %li
-        = link_to 'New', new_user_session_path
+  = render "blogs/header"
   .container
     .row
-      .col.s12.m6
-        .card.blue-grey.darken-1
-          .card-content.white-text
-            %span.card-title タイトル
-            %p
-          .card-action
-            %a(href="#")SHOW
-            %a(href="#")EDIT
-            %a(href="#")DESTROY
-
+      .col.s12.m6.offset-m3
+        = render "blogs/sentencecards"
+        
+          
+          
