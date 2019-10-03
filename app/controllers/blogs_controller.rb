@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   def index
-    
+    @blogs = Blog.includes(:user)
   end
 
   def create
@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blogs = Blog.new
+    @blog = Blog.new
   end
 
   def edit
