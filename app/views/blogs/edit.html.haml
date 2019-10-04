@@ -6,8 +6,10 @@
           .card-content
             .input-field
               = f.text_field :title ,class:'materialize-textarea'
+              = f.label :title ,"タイトル"
             .input-field
               = f.text_area :sentence ,class:'materialize-textarea'
+              = f.label :sentence, "記事"
           .card-action
             = f.submit "Send"
             = link_to "Delete",user_blog_path(current_user,@blog), method: :delete
